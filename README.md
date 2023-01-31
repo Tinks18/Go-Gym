@@ -53,7 +53,7 @@ This project was developed using agile methodologies by delivering small feature
 
 All projects were assigned to epics, prioritized under the labels, Must have, should have, could have. They were assigned to sprints and story pointed according to complexity. "Must have" stories were completed first, "should haves" and then finally "could haves". It was done this way to ensure that all core requirements were completed first to give the project a complete feel, with the nice to have features being added should there be capacity.
 
-The Kanban board was created using github projects and can be located [here](https://github.com/Gareth-McGirr/Portfolio-Project-4-SizzleAndSteak/projects/1) and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
+The Kanban board was created using github projects and can be located [here](https://github.com/users/Tinks18/projects/8) and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
 ![Kanban image](docs/readme_images/kanban.PNG)
 
@@ -119,19 +119,8 @@ As a Site Owner, I want users to verify their email when registering an account 
 
 As a site owner, I would like the allauth pages customized to that they fit in with the sites styling
 
-**EPIC 4 - Menu**
 
-As a staff user, I want to be able to create a new menu when we have new sessions to offer
-
-As a user, I would like to be able to view menus so that I can decide if I would like to book at the gym
-
-As a user, I want to be able to edit a schedule when updates are needed
-
-As a user, I would like to receive feedback when I create or update schedules so that I can see they have worked
-
-As a user, I want to be able to delete a schedule when it is no longer required
-
-**EPIC 5 - Booking**
+**EPIC 4 - Booking**
 
 As a user, I would like to be able to create a new booking when I want to visit the gym
 
@@ -145,13 +134,13 @@ As a user, I want to be able to search a booking by reference to save time searc
 
 As a user I would like to delete a booking when I no longer require it
 
-**EPIC 6 - Deployment Epic**
+**EPIC 5 - Deployment Epic**
 
 As a developer, I need to set up whitenoise so that my static files are served in deployment
 
 As a developer, I need to deploy the project to heroku so that it is live for customers
 
-**EPIC 7 - Documentation**
+**EPIC 6 - Documentation**
 
 Tasks:
 
@@ -165,6 +154,10 @@ Tasks:
 * Ability to perform CRUD functionality on Bookings
 * Restricted role based features
 * Home page with gym information
+
+Find the site skeleton here:
+
+![Design image](https://www.figma.com/file/7i3nj4KVrDPsH107OaFzha/Go-gym-Flowchart-Template?node-id=0%3A1&t=aGPZuFXVA4gIByho-1)
 
 ## The-Structure-Plane
 
