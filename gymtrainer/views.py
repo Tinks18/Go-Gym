@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
+
 # Create your views here.
-def hello(request):
-    return HttpREspponse("hello!")
+
+
+def say_hello(request):
+    return HttpResponse("hello!")
