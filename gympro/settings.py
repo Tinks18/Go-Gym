@@ -89,7 +89,7 @@ WSGI_APPLICATION = 'gympro.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse("postgres://wietpcfl:ZCHtkXzxQLJvs9daWLbH9sEMVU89swiO@manny.db.elephantsql.com/wietpcfl")
 }
 
 
