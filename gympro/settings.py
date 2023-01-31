@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 
+development = os.environ.get('DEVELOPMENT', False)
+
 import dj_database_url
 if os.path.isfile("env.py"):
     import env
@@ -26,6 +28,14 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
+
+DEBUG = development
+
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -88,9 +98,23 @@ WSGI_APPLICATION = 'gympro.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse("postgres://wietpcfl:ZCHtkXzxQLJvs9daWLbH9sEMVU89swiO@manny.db.elephantsql.com/wietpcfl")
-}
+# DATABASES = {
+#     'default': dj_database_url.parse("postgres://wietpcfl:ZCHtkXzxQLJvs9daWLbH9sEMVU89swiO@manny.db.elephantsql.com/wietpcfl")
+# }
+
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
+
 
 
 # Password validation
