@@ -6,12 +6,12 @@ from django.db import models
 class Gymslot(models.Model):
     firstname = models.CharField('First Name', max_length=50, null=False, blank=False)
     lastname = models.CharField('Last Name', max_length=50, null=False, blank=False)
-    event_date = models.CharField('Event Date', max_length=120)
-    event_time = models.CharField('Event Time', max_length=120)
+    slot_date = models.CharField('Event Date', max_length=10)
+    slot_time = models.CharField('Event Time', max_length=10)
     submit = models.BooleanField(null=False, blank=False)
 
     def __str__(self):
-        return self.firstname + " " + self.lastname + " " + self.event_date + "  " + self.event_time
+        return self.firstname + "  " + self.lastname + "  " + self.slot_date + "  " + self.slot_time
 
 # class Venue(models.Model):
 #     name = models.CharField('Venue Name', max_length=120)
