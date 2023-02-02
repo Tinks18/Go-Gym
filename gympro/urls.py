@@ -15,14 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gymtrainer.views import get_schedule, add_slot, all_events
+from gymtrainer import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', get_schedule, name='get_schedule'),
-    path('add', add_slot, name='add'),
-    path('events', all_events, name='list_events'),
+    path('', views.get_schedule, name='get_schedule'),
+    path('add', views.add_slot, name='add'),
+    path('edit/<slot_id>', views.edit_slot, name='edit'),
+    path('delete/<slot_id>', views.delete_item, name='delete')
+
+    # path('events', all_events, name='list_events'),
 ]
 
 # from django.urls import path

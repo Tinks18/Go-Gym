@@ -13,15 +13,37 @@
         <table>
        {% for slot in slots %}
             <tr>
+                 
                  {% if slot.submit %}
-                 
-                 <td><strike>{{ slot.firstname }}</strike></td>
-                 <td><strike>{{ slot.lastname }}</strike></td>
+                <td>{{ slot.firstname }}</td>
+                <td>{{ slot.lastname }}</td>
+                <td>{{ slot.event_date }}</td>
+                <td>{{ slot.event_time }}</td>
+                 <!-- <td>Success</td> -->
                  {% else %}
-                 <td>{{ slot.firstname }}</td>
-                 <td>{{ slot.lastname }}</td>
+                <td><strike>{{ slot.firstname }}</strike></td>
+                <td><strike>{{ slot.lastname }}</strike></td>
                  {% endif %}
-                 
+                <td>
+                      <a href="/edit/{{ slot.id }}">
+                         <button>Edit</button>
+                      </a>
+                </td>
+                  
+                    {% if slot.submit %}
+                    
+                    <td>
+                        <a href="/delete/{{ slot.id }}">
+                            <button>Delete</button>
+                        </a>
+                    </td>
+
+                    {% else %}
+                    <td>Finished</td>
+                    
+                    {% endif %}
+                
+              
            
             </tr>
                {% empty %}
@@ -31,7 +53,7 @@
 
        {% endfor %}
         </table>
-    <a href="/add">Add a Slot</a>
+    <a href="/add"><button>Add a Slot</button></a>
 
 </body>
 </html>
