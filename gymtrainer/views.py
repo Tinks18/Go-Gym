@@ -4,6 +4,8 @@ from calendar import HTMLCalendar
 from datetime import datetime
 from .models import Event
 from .models import Gymslot
+from .forms import SlotForm
+
 
 
 # from django.views.generic import TemplateView
@@ -27,17 +29,29 @@ def get_schedule(request):
 
 def add_slot(request):
     if request.method == 'POST':
-        firstname = request.POST.get('fslot_name')
-        lastname = request.POST.get('lslot_name')
-        submit = 'submit' in request.POST
-        Gymslot.objects.create(firstname=firstname, lastname=lastname, submit=submit)
+        form = SlotForm(request.POST)
+        if form.is_valid():
+            form.save()
 
         return redirect('get_schedule')
+    form = SlotForm()
+    context = {
+        'form': form
+        }        
+    return render(request, 'gymtrainer/add_slot.html', context)
+
+    # if request.method == 'POST':
+    #     firstname = request.POST.get('fslot_name')
+    #     lastname = request.POST.get('lslot_name')
+    #     submit = 'submit' in request.POST
+    #     Gymslot.objects.create(firstname=firstname, lastname=lastname, submit=submit)
+
+    #     return redirect('get_schedule')
  
-    return render(request, 'gymtrainer/add_slot.html')
+    # return render(request, 'gymtrainer/add_slot.html')
 
 
-# def all_events(request):
-#     events_list = Events.objects.all()
-#     return render(request, 'gymtrainer/events_list.html',
-#     {'events_list': events_list})
+def all_events(request):
+    events_list = Events.objects.all()
+    return render(request, 'gymtrainer/events_list.html',
+    {'events_list': events_list})
