@@ -1,0 +1,38 @@
+{% extends 'gymtrainer/base.html' %}
+
+{% block content %}
+<center>
+<h1>Events</h1>
+
+As of {{time}}
+<br/> <br/>
+
+{{for event in events_list }}
+<strong>{{event}}</strong>
+<ul>
+    <li>{{event.name}}</li>
+    <li>Date: {{event.event_date}}</li>
+    <li>Venue: {{event.venue}}</li>
+    <li>Venue: {{event.venue.web}}</li>
+    <li>Venue: {{event.venue.address}}</li>
+    <li>Venue: {{event.venue.phone}}</li>
+    <li>Manager: {{event.manager}}</li>
+    <li>Description: {{event.description}}</li>
+    <li>Attendees: <br/>
+        {{event.attendees.all}}
+        {{for user in event.attendees.all }}
+        {{user}} <br />
+        {{%endfor%}}
+    </li>
+    <li>event.</li>
+</ul>
+<br />
+
+<br/> <br/> <br /> <br />
+
+Copyright (c) {{ current_year}}
+
+</center>
+
+{% endblock %}
+</body>

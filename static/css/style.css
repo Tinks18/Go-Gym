@@ -93,7 +93,7 @@ div.transbox h2 {
     clear: left;
     height: 900px;
     width: 100%;
-    background: url('../images/Mindfulness-Yoga-min.jpg');
+    background: url('https://asset.cloudinary.com/sconnections/1eff2f8cb0d52f8ec3e927cf41c8bbc7');
     background-color: blueviolet;
     background-size: cover;
     background-repeat: no-repeat;
@@ -153,7 +153,7 @@ span {
 .about-us {
     margin: 110px 10% 0 0;
     color: #fff;
-    background-color: rgba(60, 60, 60, 0.6);
+    background-color: rgba(6, 1, 1, 0.6);
     max-width: 400px;
     position: absolute;
     left: 10%;

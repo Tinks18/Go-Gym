@@ -15,9 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from gymtrainer.views import say_hello
+from gymtrainer.views import get_schedule, add_slot, all_events
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hello/', say_hello, name='hello')
+    path('', get_schedule, name='get_schedule'),
+    path('add', add_slot, name='add'),
+    path('events', all_events, name='list_events'),
 ]
+
+# from django.urls import path
+# from home.views import HomeView
+
+# urlpatterns = [
+#     path('', HomeView.as_view(), name='home')
+#     ]
