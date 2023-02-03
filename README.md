@@ -4,7 +4,7 @@
 
 Go gym is a gym scheduling app designed for gym management.It is a system designed to allow staff to easily manage the training session slot bookings. It also provides customers with a simple, easy to use gym schedule viewing system where they can view their own reservations.
 
-![Mock Up](docs/readme_images/mockup.PNG)
+![Mock Up](https://techsini.com/multi-mockup/index.php)
 
 ## Table of Contents
 * [User Experience Design (UX)](#User-Experience-Design)
