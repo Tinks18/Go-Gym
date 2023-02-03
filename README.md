@@ -411,9 +411,6 @@ The Schedule Items model holds objects that are linked to the Schedule Models by
 
 Bookings are related to the customer (user) by a Foreign Key which allows the users to be able to view and update bookings attached to their accounts.
 
-Entity relationship diagram was created using [DBVisualizer](https://www.dbvis.com/) and shows the schemas for each of the models and how they are related.
-
-![Entity Relationship Diagram](docs/readme_images/erd.JPG)
 
 ### Security
 
