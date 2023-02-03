@@ -2,7 +2,6 @@ from django.shortcuts import render, redirect, get_object_or_404
 import calendar
 from calendar import HTMLCalendar
 from datetime import datetime
-# from .models import Event
 from .models import Gymslot
 from .forms import SlotForm
 

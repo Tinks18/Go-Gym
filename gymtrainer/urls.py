@@ -1,0 +1,8 @@
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    # spath('summernote/', include('django_summernote.urls')),
+    # path("", include("blog.urls"), name="blog-urls"),
+    path("accounts/", include("allauth.urls")),

@@ -1,165 +1,158 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-
-*,
-:after,
-:before {
-    box-sizing: inherit;
-}
-
 body {
-    box-sizing: border-box;
+    background-color: #F9FAFC;
+    background: url('https://res.cloudinary.com/sconnections/image/upload/v1675354341/gympro/pexels-andrej-klintsy-6392835_isq3e7.jpg');
+}
 
-    font-family: 'Josefin-Slab';
-    font-family: 'Architects-Daughter';
+#my-schedule{
+    width=50%;
+    height=300;
+    style=border:0;
+}
+
+h1,h2,h3 {
+    font-family: Lato,
+    sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+.brand {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #4A4A4F;
+}
+
+.red-o {
+    color: #E84610;
+}
+
+.thin {
     font-weight: 300;
-    background: #fff;
-    color: #403f3f;
 }
 
-.jumbotron {
-    margin-bottom: 0;
+.light-bg {
     background-color: #fff;
 }
 
-/* navigation bar  */
-.navbar {
-    margin-top: 0;
-    margin-bottom: 0;
-
+.dark-bg {
+    background-color: #445261;
 }
 
-/* contact form  */
-
-.btn {
-    font-weight: bold;
-    color: #fff;
-    background-color: #101010;
+.main-bg {
+    background-color: #F9FAFC;
 }
 
-.form-control {
-    border-color: #101010;
-
+.card {
+    border: none;
+    background-color: transparent;
 }
 
-/*  Meet the teacher section */
-#meet-teacher {
-    clear: left;
-    height: auto;
-    width: 100%;
-    background: url('../images/sconnections_get-motivated-minutes-morning-yoga-min.jpg');
-    background-color: rgb(128, 104, 151);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    position: relative;
-    padding: 1%;
-}
-
-#meet-teacher h2 {
-    padding: 3rem;
-    background-color: #fff;
-}
-
-div.transbox {
-    margin: 30px;
-    background-color: #ffffff;
-    border: 1px solid black;
-    opacity: 0.7;
-
-}
-
-div.transbox p {
-
-    font-weight: bold;
-    color: #000000;
-}
-
-div.transbox h3 {
-    color: #000000;
-}
-
-div.transbox h2 {
-    color: #000000;
-}
-
-
-/* Background image for Home page */
-
-#image {
-    clear: left;
-    height: 900px;
-    width: 100%;
-    background: url('https://asset.cloudinary.com/sconnections/1eff2f8cb0d52f8ec3e927cf41c8bbc7');
-    background-color: blueviolet;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+.image-container {
     position: relative;
 }
 
-
-
-
-/* gallery photos */
-
-#gallery {
-    margin-top: 900px;
-    word-spacing: 4px;
-    height: auto;
-}
-
-.imglist {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-}
-
-
-
-/* footer  */
-
-footer {
-    height: 250px;
-    background-color: #101010;
-    color: #fff;
-
-}
-
-
-.links {
-    text-align: center;
-}
-
-.links>li {
-    display: inline;
-}
-
-.links i {
-    font-size: 150%;
-    margin: 1%;
-    padding: 1%;
-    color: #fff;
-
-}
-
-span {
-    background-color: #fff;
-}
-
-/* About -Us  */
-.about-us {
-    margin: 110px 10% 0 0;
-    color: #fff;
-    background-color: rgba(6, 1, 1, 0.6);
-    max-width: 400px;
+.image-flash {
     position: absolute;
-    left: 10%;
-    padding: 50px;
-    border: 1px solid #ecbbbb;
-    border-radius: 2px;
+    bottom: 5%;
+    min-width: 30%;
+    left: -2px;
+    background-color: #23BBBB;
+}
+
+.author {
+    color: white;
+    margin: 4px;
+    text-transform: uppercase;
+}
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: #445261;
+    color: white;
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background: #445261;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
+}
+
+.post-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.post-link:hover,
+.page-link {
+    color: #E84610;
+}
+
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
+}
+
+.btn-signup {
+    background-color: #23BBBB;
+    color: #fff;
+}
+
+.btn-signup:hover,
+.btn-signup:active {
+    background-color: #fff;
+    color: #23BBBB;
+}
+
+.link {
+    color: #23BBBB;
+    text-decoration: none;
+}
+
+.link:hover,
+.link:active {
+    color: #445261;
+    text-decoration: underline;
+}
+
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
 }
 
 .myiframe {

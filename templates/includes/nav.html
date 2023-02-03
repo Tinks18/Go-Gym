@@ -39,22 +39,22 @@
                             Bookings
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'managebookings' %}">Manage
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'edit_slot' %}">Manage
                                     Bookings</a></li>
-                            <li><a class="dropdown-item" aria-current="page" href="{% url 'createbooking' %}">New
+                            <li><a class="dropdown-item" aria-current="page" href="{% url 'add_slot' %}">New
                                     Booking</a></li>
                         </ul>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        <a class="nav-link" href="{% url 'signup' %}">Register</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
                     {% endif %}
 
