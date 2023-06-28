@@ -8,6 +8,11 @@ from .forms import SlotForm
 
 # Create your views here.
 
+def index(request):
+
+    return render(request, 'gymtrainer/index.html')
+
+
 def get_schedule(request):
     slots = Gymslot.objects.all()
     context = {

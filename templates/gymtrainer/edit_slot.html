@@ -1,27 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym-Schedule</title>
-</head>
+{% block page_header %}
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
 
-<body>
-    <!-- <h1>Schedule for {{name}}</h1> -->
-    <h1>Edit the booked slot:</h1>
-    <form method="POST" >
-        {% csrf_token %}
-        {{ form.as_p}}
-        
-            
-        <div>
-            <p>
-                <button type="submit">Update Slot</button>
-            </p>
+{% block content %}
+<div class="border bg-muted p-3 mb-3">
+
+    <div class="row">
+        <div class="col-md-8">
+
+
+            <h1>Edit the booked slot:</h1>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p}}
+
+
+                <div>
+                    <p>
+                        <button type="submit">Update Slot</button>
+                    </p>
+                </div>
+            </form>
         </div>
-    </form>
-</body>
+    </div>
+</div>
 
-</html>
+{% endblock %}

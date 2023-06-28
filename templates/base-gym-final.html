@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html class="h-100">
 
-<head>
+<!-- <head>
     <title>Gym Pro</title>
     {% block css %}
-    <!-- Import css -->
+    <!-- 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
@@ -15,19 +15,36 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <!-- Favicon imports -->
+    <!-- Favicon imports 
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
     {% endblock %}
-    <!-- Javascript files -->
+    <!-- Javascript files 
     {% block postload_js %}
     <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     {% endblock %}
+</head> -->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gym Pro | Reach a new milestone every month</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/e9c73d7092.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/style.css">
+     <!-- Favicon imports -->
+
+     <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+  
 </head>
 
 <body>
@@ -45,20 +62,20 @@
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
-
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/accounts/login/">Login</a>
+                        <a class="nav-link" href="#">Login</a>
                     </li>
-
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/accounts/signup/">Register</a>
+                        <a class="nav-link" href="#">Register</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/accounts/logout/">Logout</a>
                     </li>
-
+                    {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
                     Goal Fitness
@@ -67,130 +84,24 @@
         </div>
     </nav>
 
-    <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+    <div class="container-fluid w-75 p-3" style="background-color: rgb(184, 159, 225);">
+        <h2 class="text-center ">My Schedule</h2>
 
-        <section id="bg-image-contact">
+    <main class="flex-shrink-0 main-bg">
+        {% block content %}
+        <!-- Content Goes here -->
+        {% endblock content %}
+    </main>
 
-            <div class="container-fluid w-75 p-3" style="background-color: rgb(184, 159, 225);">
-                <h2 class="text-center ">My Schedule</h2>
-                <!-- <table class=" table-sm text-center table-responsive ">
-                    <thead>
-                        <tr>
-                            
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date</th>
-                            <th>Time</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for slot in slots %}
-                        <tr>
-                             {% if slot.submit %}
-                             <td>{{ slot.firstname }}</td>
-                             <td>{{ slot.lastname }}</td>
-                             <td>{{ slot.slot_date }}</td>
-                             <td>{{ slot.slot_time }}</td>
-                             <!-- <td>Success</td> -->
-                <!-- {% else %}
-                             <td><strike>{{ slot.firstname }}</strike></td>
-                             <td><strike>{{ slot.lastname }}</strike></td>
-                             {% endif %}
-                            <td>
-                                <a href="/edit/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Edit</button>
-                                </a>
-                            </td>
-
-                            {% if slot.submit %}
-
-                            <td>
-                                <a href="/delete/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Delete</button>
-                                </a>
-                            </td>
-
-                            {% else %}
-                            <td>Finished</td>
-                            <td>
-                                <a href="/delete/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Delete</button>
-                                </a>
-                            </td>
-
-                            {% endif %}
-                             </tr>
-
-                             {% empty %}
-                             <tr>
-                                 <td>You have no training slots booked for today</td>
-                             </tr>
-
-                             {% endfor %}
-                        
-                    </tbody>
-                    
-                </table> -->
-                
-
-                <div class="border bg-muted p-3 mb-3">
-
-                    <div class="row">
-                        <div class="col-md-8">
-                            {% for slot in slots %}
-                            <div class=" border bg-muted p-3 mb-3 col-md-8">
-                                {% if slot.submit %}
-                                <p><strong>Name</strong> : {{ slot.firstname }} {{ slot.lastname }} </p>
-                                <p><strong>Date </strong> : {{ slot.slot_date }} 
-                                <strong>Time </strong> : {{ slot.slot_time }}</p>
-
-                                <!-- <p>Success</p> -->
-                                {% else %}
-                                <p><strike></strong>{{ slot.firstname }} {{ slot.lastname }} {{ slot.slot_date }}{{ slot.slot_time }}</strike>
-                                    <span class="btn btn-success btn-sm mr-2"><i class="far fa-check-circle"></i>
-                                </p>
-                                {% endif %}
-
-                              
-                                <a class="btn btn-info btn-sm mx-1" href="/edit/{{ slot.id }}">Edit</a>
-
-
-                                {% if slot.submit %}
-                                <a class="btn btn-danger btn-sm mx-1" href="/delete/{{ slot.id }}">Delete</a>
-
-                                {% else %}
-
-                                <a class="btn btn-danger btn-sm mx-1" href="/delete/{{ slot.id }}">Delete</a>
-
-
-                                {% endif %}
-                            </div>
-
-                            {% empty %}
-                            <div>
-                                <p>You have no training slots booked for today</p>
-                            </div>
-
-                            {% endfor %}
-
-                        </div>
-
-                    </div>
-
-                </div>
-            <div>
-                <a href="/add"><button type="button" class="btn btn-secondary btn-sm mx-1">Add a Slot</button></a>
-
-            </div>
+                           
             </div>
         </section>
 
       <!-- Footer -->
         
-
+      {% include 'includes/footer.html' %}
         
-<footer class="container-fluid ">
+<!-- <footer class="container-fluid ">
 
     <div id="footer-details" class="row">
         <div class="col-sm-4 ">
@@ -202,7 +113,7 @@
 
             <div class="Contact us">
                 <!-- Address -->
-                <h2 class="uppercase general-sub">Address </h2>
+                <!-- <h2 class="uppercase general-sub">Address </h2>
                 <p class="inline-block">
                     Phoenix Park
                     <br>
@@ -213,12 +124,12 @@
 
             </div>
 
-        </div>
+        </div> -->
 
-        <div class="col-sm-4 ">
+        <!-- <div class="col-sm-4 "> -->
 
             <!-- opening times  -->
-            <h2 class="uppercase general-sub">Opening hours</h2>
+            <!-- <h2 class="uppercase general-sub">Opening hours</h2>
             <p class="inline-block">
                 Monday - Friday: 7am - 10pm
                 <br>
@@ -229,9 +140,9 @@
 
         </div>
         <div class="col-sm-4 ">
-
+ -->
             <!-- Social Links -->
-            <h2 class="uppercase general-sub">Social</h2>
+            <!-- <h2 class="uppercase general-sub">Social</h2>
             <ul class="list-inline social-links">
                 <li class="list-inline-item">
                     <a target="_blank" href="#">
@@ -282,7 +193,7 @@
        
     </div>
 
-</footer>
+</footer> -->
 
 
 </body>

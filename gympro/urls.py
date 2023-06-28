@@ -20,7 +20,8 @@ from gymtrainer import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.get_schedule, name='get_schedule'),
+    path('', views.index, name='home'),
+    path('get_schedule', views.get_schedule, name='get_schedule'),
     path('add', views.add_slot, name='add'),
     path('edit/<slot_id>', views.edit_slot, name='edit'),
     path('delete/<slot_id>', views.delete_item, name='delete'),
