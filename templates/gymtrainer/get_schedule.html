@@ -47,14 +47,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/accounts/login/">Login</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="/accounts/signup/">Register</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="/accounts/logout/">Logout</a>
                     </li>
@@ -73,67 +66,7 @@
 
             <div class="container-fluid w-75 p-3" style="background-color: rgb(184, 159, 225);">
                 <h2 class="text-center ">My Schedule</h2>
-                <!-- <table class=" table-sm text-center table-responsive ">
-                    <thead>
-                        <tr>
-                            
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Date</th>
-                            <th>Time</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for slot in slots %}
-                        <tr>
-                             {% if slot.submit %}
-                             <td>{{ slot.firstname }}</td>
-                             <td>{{ slot.lastname }}</td>
-                             <td>{{ slot.slot_date }}</td>
-                             <td>{{ slot.slot_time }}</td>
-                             <!-- <td>Success</td> -->
-                <!-- {% else %}
-                             <td><strike>{{ slot.firstname }}</strike></td>
-                             <td><strike>{{ slot.lastname }}</strike></td>
-                             {% endif %}
-                            <td>
-                                <a href="/edit/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Edit</button>
-                                </a>
-                            </td>
-
-                            {% if slot.submit %}
-
-                            <td>
-                                <a href="/delete/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Delete</button>
-                                </a>
-                            </td>
-
-                            {% else %}
-                            <td>Finished</td>
-                            <td>
-                                <a href="/delete/{{ slot.id }}">
-                                    <button type="button" class="btn btn-link">Delete</button>
-                                </a>
-                            </td>
-
-                            {% endif %}
-                             </tr>
-
-                             {% empty %}
-                             <tr>
-                                 <td>You have no training slots booked for today</td>
-                             </tr>
-
-                             {% endfor %}
-                        
-                    </tbody>
-                    
-                </table> -->
-                
-
+                             
                 <div class="border bg-muted p-3 mb-3">
 
                     <div class="row">
@@ -187,102 +120,14 @@
         </section>
 
       <!-- Footer -->
+
+
+    {% include 'includes/footer.html' %}
+
+    <!-- /Footer -->
         
+  
 
-        
-<footer class="container-fluid ">
-
-    <div id="footer-details" class="row">
-        <div class="col-sm-4 ">
-            <h2 class="uppercase general-sub">About</h2>
-            <p class="inline-block">
-               Let your Fitness Journey begin
-            </p>
-
-
-            <div class="Contact us">
-                <!-- Address -->
-                <h2 class="uppercase general-sub">Address </h2>
-                <p class="inline-block">
-                    Phoenix Park
-                    <br>
-                    Dublin
-                </p>
-                <p class="inline-block"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@GymPro.ie </p>
-                <p class="inline-block"> <i class="fa fa-phone" aria-hidden="true"></i> +353 7777777777</p>
-
-            </div>
-
-        </div>
-
-        <div class="col-sm-4 ">
-
-            <!-- opening times  -->
-            <h2 class="uppercase general-sub">Opening hours</h2>
-            <p class="inline-block">
-                Monday - Friday: 7am - 10pm
-                <br>
-                Saturday: 9am - 6pm
-                <br>
-                Closed Sunday and Bank Holidays
-            </p>
-
-        </div>
-        <div class="col-sm-4 ">
-
-            <!-- Social Links -->
-            <h2 class="uppercase general-sub">Social</h2>
-            <ul class="list-inline social-links">
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-facebook" aria-hidden="true"></i>
-                        <span class="sr-only">Facebook</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-twitter" aria-hidden="true"></i>
-                        <span class="sr-only">Twitter</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        <span class="sr-only">LinkedIn</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-pinterest" aria-hidden="true"></i>
-                        <span class="sr-only">Pinterest</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-instagram" aria-hidden="true"></i>
-                        <span class="sr-only">Instagram</span>
-                    </a>
-                </li>
-                <li class="list-inline-item">
-                    <a target="_blank" href="#">
-                        <i class="fa fa-youtube" aria-hidden="true"></i>
-                        <span class="sr-only">YouTube</span>
-                    </a>
-                </li>
-            </ul>
-
-        </div>
-
-       
-    </div>
-
-    <div class="d-flex justify-content-center copyright-banner">
-        <p class="m-1">Copyright © 2023 | Gym Pro</a>
-        </p>
-       
-    </div>
-
-</footer>
 
 
 </body>

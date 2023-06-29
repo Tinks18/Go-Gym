@@ -8,7 +8,7 @@
     {% block meta %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <base href="/"> 
     {% endblock %}
     {% block css %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -20,7 +20,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'css/style.css' %}">
+    <!-- <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}"> -->
     {% endblock %}
     <!-- Javascript files -->
     {% block postload_js %}
@@ -61,20 +61,30 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto">
                     <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
-                    <li class="active nav-item mr-2"><a class="nav-link" href="{% url 'get_schedule' %}">Trainers</a>
+
+                    {% if user.is_authenticated %}
+                    <li class="active nav-item mr-2"><a class="nav-link" href="{% url 'get_schedule' %}">My Schedule</a>
                     </li>
+
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_login' %}">Sign In </a>
+                    </li>
+
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'get_schedule' %}">Trainers</a>
                     </li> -->
-                    <li class="nav-item mr-2"><a class="nav-link" href="/">Logout</a></li>
-
-                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="/login">Sign In / Sign Up</a>
+                    {% else %}
+                    
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
+
+                    <li class="nav-item mr-2"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
+                    {% endif %}
                 </ul>
+              
             </div>
             <div class="d-none d-md-block">
                 <p class="navbar-text my-auto mr-2"><i>Dublin's best Personal trainers available for booking!</i></p>
-                <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
+                <a href="{% url 'account_login' %}" class="btn btn--cta btn--red">Sign In / Sign Up</a>
             </div>
         </nav>
     </div>
@@ -85,8 +95,7 @@
         <div class="opaque-overlay">&nbsp;</div>
 
         <div class="container-fluid w-75 p-3" style="background-color: rgb(184, 159, 225);">
-            <h2 class="text-center ">My Schedule</h2>
-
+            
             <main class="flex-shrink-0 main-bg">
                 {% block content %}
                 <!-- Content Goes here -->
@@ -99,9 +108,6 @@
     </div>
     <!-- /.callout -->
 
-
-
-    </div>
 
     <!-- Footer -->
 

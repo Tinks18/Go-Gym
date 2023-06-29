@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en-us">
 
@@ -25,14 +27,13 @@
                 <div class="col-12">
                     <div class="site-wide-alert alert alert-warning text-center">
                         <strong>Sale Now On!</strong> We've got a sale on. Get a 12-month subscription for the price of 6!
-                         <!-- <a href="">See here for details!</a> -->
+                         
                     </div>
                 </div>
             </div>
         </div>
         <nav class="navbar navbar-dark navbar-expand-sm">
-            <!-- <a class="navbar-brand" href="{% url 'get_schedule' %}"><span class="brand, red-0">GymPr<span
-                class="red-o">o</span><span class="thin">|</span></span></span></a> -->
+           
             <a href="/" class="navbar-brand">Gym Pro</a>
 
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,18 +42,21 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav mr-auto">
                     <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
-                    <li class="active nav-item mr-2"><a class="nav-link"  href="{% url 'get_schedule' %}">Trainers</a></li>
-                    <!-- <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'get_schedule' %}">Trainers</a>
-                    </li> -->
-                    <li class="nav-item mr-2"><a class="nav-link" href="/">Logout</a></li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_login' %}">Sign In</a></li>
+
+                    <li class="active nav-item mr-2"><a class="nav-link"  href="{% url 'get_schedule' %}">My Schedule</a></li>
+                    {% else %}
+                    <li class="nav-item mr-2"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                    
-                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="/login">Sign In / Sign Up</a></li>
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a></li>
+                    {% endif %}
                 </ul>
+                
             </div>
             <div class="d-none d-md-block">
                 <p class="navbar-text my-auto mr-2"><i>Dublin's best Personal trainers available for booking!</i></p>
-                <a href="/login" class="btn btn--cta btn--red">Sign In / Sign Up</a>
+                <a href="{% url 'account_signup' %}" class="btn btn--cta btn--red">Sign In / Sign Up</a>
             </div>
         </nav>
     </div>
