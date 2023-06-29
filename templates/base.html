@@ -8,7 +8,7 @@
     {% block meta %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="/"> 
+    <base href="/">
     {% endblock %}
     {% block css %}
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -66,21 +66,23 @@
                     <li class="active nav-item mr-2"><a class="nav-link" href="{% url 'get_schedule' %}">My Schedule</a>
                     </li>
 
-                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_login' %}">Sign In </a>
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link"
+                            href="{% url 'account_login' %}">Sign In </a>
                     </li>
 
                     <!-- <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'get_schedule' %}">Trainers</a>
                     </li> -->
                     {% else %}
-                    
-                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link" href="{% url 'account_signup' %}">Sign Up</a>
+
+                    <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link"
+                            href="{% url 'account_signup' %}">Sign Up</a>
                     </li>
 
                     <li class="nav-item mr-2"><a class="nav-link" href="{% url 'account_logout' %}">Logout</a></li>
                     {% endif %}
                 </ul>
-              
+
             </div>
             <div class="d-none d-md-block">
                 <p class="navbar-text my-auto mr-2"><i>Dublin's best Personal trainers available for booking!</i></p>
@@ -95,7 +97,7 @@
         <div class="opaque-overlay">&nbsp;</div>
 
         <div class="container-fluid w-75 p-3" style="background-color: rgb(184, 159, 225);">
-            
+
             <main class="flex-shrink-0 main-bg">
                 {% block content %}
                 <!-- Content Goes here -->
