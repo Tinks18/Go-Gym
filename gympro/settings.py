@@ -38,7 +38,7 @@ else:
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+
 
 ALLOWED_HOSTS = ["gymin.herokuapp.com", "8000-tinks18-gogym-ye4e2mv6877.ws-eu101.gitpod.io"]
 
