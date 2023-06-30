@@ -8,7 +8,7 @@ Ensure a user can sign up to the website
 
 Steps:
 
-1. Navigate to [gym-pro](https://gympro.herokuapp.com) and click Register
+1. Navigate to [gym-pro](https://gymin.herokuapp.com/) and click Register
 2. Enter email, username and password 
 3. Click Sign up
 
@@ -27,7 +27,7 @@ Description:
 Ensure a user can log in once signed up
 
 Steps:
-1. Navigate to [gym-pro](https://gympro.herokuapp.com)
+1. Navigate to [gym-pro](https://gymin.herokuapp.com/)
 2. Enter login detailscreated in previous test case
 3. Click login
 
@@ -67,7 +67,7 @@ Ensure a new booking slot can be created.
 
 Steps:
 
-1. Navigate to [page](https://gympro.herokuapp.com/add) - Login if prompted.
+1. Navigate to [page](https:/gymin.herokuapp.com/add) - Login if prompted.
 2. Enter the following:
     - Name: Britney Spears
     - Date: Any future date
@@ -91,7 +91,7 @@ Ensure a booking slot can be edited.
 
 Steps:
 
-1. Navigate to [page](https://gympro.herokuapp.com/edit) - Login if prompted.
+1. Navigate to [page](https://gymin.herokuapp.com/edit) - Login if prompted.
 2. Enter the following:
     - Name: Britney Spears
     - Date: Any future date
@@ -160,11 +160,6 @@ Tests were performed on the create booking to ensure that:
 
 To be added.
 
-Unit tests were created to test some basic functionality such as templates used and redirects. These can be found in the tests.py files in the respective apps.
-
-Results:
-
-![unit tests](docs/testing/unit-test.PNG)
 
 ## Accessibility
 
@@ -203,7 +198,7 @@ JavaScript code was run through [JSHINT](https://jshint.com) javascript validato
 
 Lighthouse report showed areas for improvement on SEO and Best practices. Meta descriptions and keywords were added to boost the SEO to 100 but the best practice warnings were coming from the use of an embedded iframe's javascript. Unfortunately I did not find a way to improve this as I am not initialising the google map iframe with javascript.
 
-![Lighthouse v1](docs/testing/light-house-v2.PNG)
+![Lighthouse v1](static/images/lighthouse.png)
 
 ## Responsiveness
 
@@ -211,7 +206,7 @@ All pages were tested to ensure responsiveness on screen sizes from 320px and up
 
 Steps to test:
 
-- Open browser and navigate to [gym-pro](https://gympro.herokuapp.com)
+- Open browser and navigate to [gym-pro](https://gymin.herokuapp.com)
 - Open the developer tools (right click and inspect)
 - Set to responsive and decrease width to 320px
 - Set the zoom to 50%
@@ -236,7 +231,7 @@ iPhone SE
 
 Template not allowed
 
-![Allowed Hosts Bug](docs/testing/javascript.PNG)
+![Allowed Hosts Bug]()
 
 Fix:
 
@@ -247,7 +242,9 @@ Mime type bug
 Description: 
 CSS was not showing for the all auth templates
 
-![MIME type Bug](docs/testing/javascript.PNG)
+![MIME type Bug](static/images/MIMetype-bug.jpg)
 Fix:
 
 - Add the link : base href="/" in meta block above the css block in the base.html header 
+
+![MIME type Bug](static/images/resolvedmimetyperror.jpg)

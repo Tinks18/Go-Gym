@@ -4,7 +4,7 @@
 
 Go gym is a gym scheduling app designed for gym management.It is a system designed to allow staff to easily manage the training session slot bookings. It also provides customers with a simple, easy to use gym schedule viewing system where they can view their own reservations.
 
-![Mock Up](https://techsini.com/multi-mockup/index.php)
+![Mock Up](static/images/mockup-gymgo.png)
 
 ## Table of Contents
 * [User Experience Design (UX)](#User-Experience-Design)
@@ -186,7 +186,7 @@ The following navigation items are available on all pages:
 
 The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices.
 
-![Navbar](https://github.com/Tinks18/Go-Gym/blob/main/static/images/navbar.png)
+![Navbar](static/images/navigation.png)
 
 ``USER STORY - As a restaurant owner, I would like a home page so that customers can view information on my restaurant``
 
@@ -200,11 +200,10 @@ Under the information section are two buttons, 'Make a booking' and 'View bookin
 
 The last section of the home page contains a google map, marking the location of the gym and the opening hours of the gym. This will allow the customer to locate the gym and operating times.
 
-![Hero Image](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Hero Image](static/images/homepage.png)
 
-![Welcome Section](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Welcome Section](static/images/homepage.png)
 
-![Find Us](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
 
 
 ``USER STORY - As a developer, I need to create the footer with social media links and contact information``
@@ -215,7 +214,7 @@ Implementation:
 
 A footer has been added to the bottom of the site, this contains a Twitter and Facebook link so that users can follow the gym on social media if they want to keep up to date with special offers not advertised on the website. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
 
-![Footer](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Footer](static/images/footer-gogym.jpg)
 )
 
 ``USER STORY - As a staff user, I want to be able to create a new menu when we have new dishes to offer``
@@ -226,7 +225,7 @@ Implementation:
 
 A create booking page was implemented to allow staff users to create new schedules via the UI without having to use the backend admin panel. This will allow staff the ability to quickly update bookings when they have made changes to the schedule being offered.
 
-![Create Menu](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Create ](static/images/addslot.png)
 )
 
 ``USER STORY -As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant``
@@ -237,7 +236,7 @@ Implementation:
 
 A booking page has been implemented to allow users to see the current active schedules and decide whether they are interested in the making a booking when he has free slot in the schedule. This is visible to all users regardless of logged in state as it is not user friendly to restrict core information from users to force them into signing up.
 
-![View Menus](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![View ](static/images/mockup-gymgo.png)
 )
 
 ``USER STORY -As a staff user, I want to be able to edit a menu when updates are needed``
@@ -248,7 +247,7 @@ Implementation:
 
 On the manage bookings page a button was added to allow staff members to edit a schedule when changes need to be made.
 
-![Edit Menu](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Edit ](static/images/edit-slot.png)
 )
 
 ``USER STORY -As a staff member, I would like to receive feedback when I create or update menus so that I can see they have worked``
@@ -260,7 +259,7 @@ Implementation:
 
 On the manage bookings page, a delete button has been implemented that will take staff users to a confirmation page to allow them to delete a booking. This will allow staff to delete bookings when they are no longer needed
 
-![Delete Menu](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Delete ](static/images/my-schedule.png)
 )
 
 ``USER-STORY - As a user, I would like to be able to create a new booking when I want to book a personal training slot at the gym``
@@ -275,7 +274,7 @@ Extensive logic was added to the form validation to ensure that not only is ther
 
 This allows for schedule optimisation to ensure we do not have double bookings that for a users customer groups. Ensuring schedule optimisation and revenue for the gym.
 
-![Create Booking](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Create Booking](static/images/my-schedule.png)
 )
 
 ``USER-STORY - As a user, I would like to view my bookings when I need to check the information``
@@ -288,7 +287,7 @@ A manage bookings page was implemented with validation checks on the user. This 
 
 For gym staff users, all bookings will be available to display so that staff can easily view numbers and future bookings.
 
-![Manage Bookings](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Manage Bookings](static/images/my-schedule.png)
 )
 
 ``USER-STORY - As a user, I would like to be able to edit a booking so that I can make changes when needed``
@@ -301,7 +300,7 @@ On the manage bookings page an edit button is present that allows the user to di
 
 For staff users, they can also edit bookings from the manage booking page, even if they did not create the reservation. This will allow restaurant staff to ammend details as needed.
 
-![Edit Booking](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Edit Booking](static/images/edit-slot.png)
 )
 
 ``USER-STORY - As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully``
@@ -316,14 +315,14 @@ A delete button was added to the manage bookings page that will allow users to d
 
 For staff members, they also have the abaility to delete any booking through the UI as well. This will allow staff to free up schedules capacity should a customer call to cancel their booking.
 
-![Delete Booking](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Delete Booking](static/images/my-schedule.png)
 )
 
 Favicon
     * A site wide favicon was implemented.
     * This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
-![Favicon](https://github.com/Tinks18/Go-Gym/blob/main/static/images/nesthub.png)
+![Favicon](static/favicon/favicon.ico)
 )
 
 **Error Pages**
@@ -390,13 +389,13 @@ A favicon was added the website to enable users to easily locate the website in 
 - Home page
 
 
-![Home Page](docs/wireframes/home.JPG)
+![Home Page](static/images/homepage.png)
 
 
 - Signup page
 
 
-![Sign up Page](docs/wireframes/register.JPG)
+![Sign up Page](static/images/signup.png)
 
 
 **Differences to Design**
@@ -569,17 +568,11 @@ Most commonly, forks are used to either propose changes to someone else's projec
 ## Credits 
 
 The [Hero Image](https://www.pexels.com/photo/a-woman-doing-an-ab-workout-6392835/) was taken from pexels.
-The [Hero Image](https://www.pexels.com/photo/crop-sportsman-lifting-dumbbells-during-training-6550848/) was taken from pexels.
-The [Hero Image](https://www.pexels.com/photo/muscular-sportsman-training-on-arms-machine-in-gym-4608134/) was taken from pexels.
-The [Hero Image](https://www.pexels.com/photo/an-on-treadmill-1954524/)
-https://www.pexels.com/photo/group-of-woman-doing-yoga-868483/
-https://www.pexels.com/photo/man-in-black-crew-neck-t-shirt-standing-in-front-of-boxing-gloves-3912953/
- https://www.pexels.com/photo/topless-man-in-gray-shorts-standing-on-brown-wooden-floor-4761790/
- Photo by Julia Larson : https://www.pexels.com/photo/focused-black-woman-exercising-with-battling-ropes-near-coach-6455772/
- https://www.pexels.com/photo/happy-multiethnic-sportspeople-clapping-hands-in-gym-6456134/
- Photo by Tima Miroshnichenko: https://www.pexels.com/photo/grayscale-photo-of-a-woman-using-battle-ropes-6388387/
- Photo by Pixabay: https://www.pexels.com/photo/woman-doing-exercise-414029/
- Photo by Cliff  Booth: https://www.pexels.com/photo/a-woman-holding-ropes-beside-a-trainer-4058411/
 
 
+Code isntitute Whiskey drop bootstrap and blog chapters have been used as base template 
+Read me template Gareth given by Mentor Daisy
+Thanks to the tutor support and student care teams.
+
+Thankyou to Kenan for the continous support throughout the course.
 
