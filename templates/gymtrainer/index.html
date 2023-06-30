@@ -41,17 +41,7 @@
 <body>
     <!-- Navigation -->
     <div class="container-fluid navalert-container">
-        <div class="container-fluid alert-container">
-            <div class="row d-none d-sm-block">
-                <div class="col-12">
-                    <div class="site-wide-alert alert alert-warning text-center">
-                        <strong>Sale Now On!</strong> We've got a sale on. Get a 12-month subscription for the price of
-                        6!
-
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <nav class="navbar navbar-dark navbar-expand-sm">
 
             <a href="/" class="navbar-brand">Gym Pro</a>
@@ -83,8 +73,36 @@
                 <a href="{% url 'account_signup' %}" class="btn btn--cta btn--red">Sign In / Sign Up</a>
             </div>
         </nav>
+        <div class="container-fluid alert-container">
+            <div class="row d-none d-sm-block">
+                <div class="col-12">
+                    <div class="site-wide-alert alert alert-warning text-center">
+                        <strong>Sale Now On!</strong> We've got a sale on. Get a 12-month subscription for the price of
+                        6!
+
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <!-- /Navigation-->
+
+    <!-- Messages-->
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                {% for message in messages %}
+                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- /Messages-->
 
     <!-- Callout -->
     <div class="container-fluid callout-container">
@@ -244,6 +262,13 @@
     </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+    </script>
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById('msg');
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
     </script>
 
     {% endblock %}
