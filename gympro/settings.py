@@ -38,7 +38,9 @@ else:
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 ALLOWED_HOSTS = ["gymin.herokuapp.com", "8000-tinks18-gogym-ye4e2mv6877.ws-eu101.gitpod.io"]
 
@@ -110,28 +112,25 @@ WSGI_APPLICATION = 'gympro.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     'default': dj_database_url.parse("postgres://wietpcfl:ZCHtkXzxQLJvs9daWLbH9sEMVU89swiO@manny.db.elephantsql.com/wietpcfl")
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
 
-# if development:
-#     DATABASES = {
-#         'default': {
-#             'ENGINE': 'django.db.backends.sqlite3',
-#             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#         }
-#     }
-# else:
-#     DATABASES = {
-#         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#     }
+
+if development:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
 
 
 
