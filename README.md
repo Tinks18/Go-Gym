@@ -45,7 +45,7 @@ Go gym is a gym scheduling app designed for gym management.It is a system design
 
 The site is aimed to help gym staff to easily manage the booking slots displayed on the website, as well as keeping track of upcoming bookings, editing and deleting as neccessary. 
 
-The site also aims to provide customers with a simple, hassle free way to view reservations without the need to call the gym. They will also be able to view empty training slots when needed.
+The site also aims to provide customers with a simple, hassle free way to view reservations without the need to call the gym. They will also be able to view training slots when needed.
 
 ### Agile Planning
 
@@ -55,7 +55,7 @@ All projects were assigned to epics, prioritized under the labels, Must have, sh
 
 The Kanban board was created using github projects and can be located [here](https://github.com/users/Tinks18/projects/6/views/1) and can be viewed to see more information on the project cards. All stories except the documentation tasks have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
-![Kanban image](docs/readme_images/kanban.PNG)
+![Kanban image](static/images/kanban-board.png)
 
 #### Epics
 
@@ -128,15 +128,11 @@ As a user, I would like to view my bookings when I need to check the information
 
 As a user, I would like to be able to edit a booking so that I can make changes when needed
 
-As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully
-
-As a user, I want to be able to search a booking by reference to save time searching
-
 As a user I would like to delete a booking when I no longer require it
 
 **EPIC 5 - Deployment Epic**
 
-As a developer, I need to set up whitenoise so that my static files are served in deployment
+As a developer, I need to set up my static files are served in deployment
 
 As a developer, I need to deploy the project to heroku so that it is live for customers
 
@@ -157,7 +153,7 @@ Tasks:
 
 Find the site skeleton here:
 
-![Design image](https://www.figma.com/file/7i3nj4KVrDPsH107OaFzha/Go-gym-Flowchart-Template?node-id=0%3A1&t=aGPZuFXVA4gIByho-1)
+![Design image](static/images/figma.png)
 
 ## The-Structure-Plane
 
@@ -169,17 +165,14 @@ Implementation:
 
 **Navigation Menu**
 
-The Navigation contains links for Home, Bookings and has allauth options.
+The Navigation contains links for Home, My Schedule and has allauth options.
 
 The following navigation items are available on all pages:
   * Home -> index.html - Visible to all
-  * Bookings (Drop Down):
-    * Manage Bookings -> managebookings.html - Visible to logged in users
-    * New Booking -> booking.html - Visible to logged in users
-  * Schedules (Drop Down):
-    * View Booking -> bookings.html - Visible to all
-    * Create Booking -> create_booking.html - Visible to user
-    * Manage Booking -> managebookings- Visible to user
+  * Schedule :
+    * My Schedule -> get_schedule.html - Visible to logged in users
+    * My Schedule -> add_slot.html - Visible to logged in users
+    * My Schedule -> edit_slot.html - Visible to logged in users
   * Login -> login.html - Visible to logged out users
   * Register -> signup.html - Visible to logged out users
   * Logout -> logout.html - Visible to logged in users
@@ -188,19 +181,22 @@ The navigation menu is displayed on all pages and drops down into a hamburger me
 
 ![Navbar](static/images/navigation.png)
 
-``USER STORY - As a restaurant owner, I would like a home page so that customers can view information on my restaurant``
+``USER STORY - As a gym owner, I would like a home page so that customers can view information on my gym``
 
 Implementation:
 
 **Home Page**
 
-The home page contains a hero image of a gym  and the gym information at the top of the page. This will immediately make it evident to the user, what the purpose of the website is.
+The home page contains a hero image of a gym  and a banner under the navigation menu announcing deals giving the gym information at the top of the page. This will immediately make it evident to the user, what the purpose of the website is.
 
-Under the information section are two buttons, 'Make a booking' and 'View bookings'. These buttons will allow the user a quick way to the respective pages if they wish to make a booking or view the gym active schedules.
+The hero section has a sign up button that opens a sign up form.
 
-The last section of the home page contains a google map, marking the location of the gym and the opening hours of the gym. This will allow the customer to locate the gym and operating times.
+
 
 ![Hero Image](static/images/homepage.png)
+
+For signed up users Under the schedule section are three buttons, 'Add ', 'Edit' and ' Delete'. These buttons will allow the user a quick way to the respective pages if they wish to make a booking or edit the gym active schedules.
+
 
 ![Welcome Section](static/images/homepage.png)
 
@@ -212,12 +208,14 @@ Implementation:
 
 **Footer**
 
+The footer section of the home page contains a address, marking the location of the gym and the opening hours of the gym. This will allow the customer to locate the gym and operating times.
+
 A footer has been added to the bottom of the site, this contains a Twitter and Facebook link so that users can follow the gym on social media if they want to keep up to date with special offers not advertised on the website. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
 
 ![Footer](static/images/footer-gogym.jpg)
-)
 
-``USER STORY - As a staff user, I want to be able to create a new menu when we have new dishes to offer``
+
+``USER STORY - As a staff user, I want to be able to create a new slot when we have new gym timing slots to offer``
 
 Implementation:
 
@@ -226,41 +224,39 @@ Implementation:
 A create booking page was implemented to allow staff users to create new schedules via the UI without having to use the backend admin panel. This will allow staff the ability to quickly update bookings when they have made changes to the schedule being offered.
 
 ![Create ](static/images/addslot.png)
-)
 
-``USER STORY -As a user, I would like to be able to view menus so that I can decide if I would like to dine at the restaurant``
+
+``USER STORY -As a user, I would like to be able to view schedule``
 
 Implementation:
 
 **View  Page**
 
-A booking page has been implemented to allow users to see the current active schedules and decide whether they are interested in the making a booking when he has free slot in the schedule. This is visible to all users regardless of logged in state as it is not user friendly to restrict core information from users to force them into signing up.
+A schedule page has been implemented to allow users to see the current active schedules and decide whether they are interested in the making a booking when he has free slot in the schedule. 
 
-![View ](static/images/mockup-gymgo.png)
-)
+![View ](static/images/my-schedule.png)
 
-``USER STORY -As a staff user, I want to be able to edit a menu when updates are needed``
+
+``USER STORY -As a staff user, I want to be able to edit a slot when updates are needed``
 
 Implementation:
 
 **Edit Page**
 
-On the manage bookings page a button was added to allow staff members to edit a schedule when changes need to be made.
+On the my schedule page a button was added to allow staff members to edit a schedule when changes need to be made.
 
 ![Edit ](static/images/edit-slot.png)
-)
 
-``USER STORY -As a staff member, I would like to receive feedback when I create or update menus so that I can see they have worked``
 
 Implementation:
 
 
-**Delete  Page**
+**Delete  booking**
 
-On the manage bookings page, a delete button has been implemented that will take staff users to a confirmation page to allow them to delete a booking. This will allow staff to delete bookings when they are no longer needed
+On the my schedule page, a delete button has been implemented that will take staff users to a delete a booking. This will allow staff to delete bookings when they are no longer needed.
 
 ![Delete ](static/images/my-schedule.png)
-)
+
 
 ``USER-STORY - As a user, I would like to be able to create a new booking when I want to book a personal training slot at the gym``
 
@@ -268,27 +264,25 @@ Implementation:
 
 **Create booking page**
 
-A booking page was implemented with a form that takes in the customer details and enables the user to easily make a booking through the UI. 
+A schedule booking page was implemented with a form that takes in the customer details and enables the user to easily make a booking through the UI. 
 
-Extensive logic was added to the form validation to ensure that not only is there a slot available for the users chosen time and date but also that it has enough time for the breaks. If the form is successful with validation on the front end, logic is in place to find the schedule table to book the customers for the given date and time.
+This allows for schedule optimisation to ensure we have bookings that for a users customer groups. Ensuring schedule optimisation and revenue for the gym.
 
-This allows for schedule optimisation to ensure we do not have double bookings that for a users customer groups. Ensuring schedule optimisation and revenue for the gym.
+![Create Booking](static/images/addslot.png)
 
-![Create Booking](static/images/my-schedule.png)
-)
 
-``USER-STORY - As a user, I would like to view my bookings when I need to check the information``
+``USER-STORY - As a user, I would like to view my schedule bookings when I need to check the information``
 
 Implementation:
 
-**Manage bookings page**
+**My schedule page**
 
-A manage bookings page was implemented with validation checks on the user. This shows all of the users bookings. This will allow the user to view their upcoming bookings when needed.
+A bookings page was implemented with validation checks on the user. This shows all of the users bookings. This will allow the user to view their upcoming bookings when needed.
 
 For gym staff users, all bookings will be available to display so that staff can easily view numbers and future bookings.
 
-![Manage Bookings](static/images/my-schedule.png)
-)
+![Schedule Bookings](static/images/my-schedule.png)
+
 
 ``USER-STORY - As a user, I would like to be able to edit a booking so that I can make changes when needed``
 
@@ -296,34 +290,32 @@ Implementation:
 
 **Edit Booking Page**
 
-On the manage bookings page an edit button is present that allows the user to direct to a form and update their booking when required. This will allow the user to easily manage their own booking.
+On the  my schedule bookings page an edit button is present that allows the user to direct to a form and update their booking when required. This will allow the user to easily manage their own booking.
 
-For staff users, they can also edit bookings from the manage booking page, even if they did not create the reservation. This will allow restaurant staff to ammend details as needed.
+For staff users, they can also edit bookings from the schedule booking page. This will allow gym staff to ammend details as needed.
 
 ![Edit Booking](static/images/edit-slot.png)
-)
 
-``USER-STORY - As a user, I would like to receive feedback when I create a booking or edit one so I know it was completed successfully``
+
+``USER-STORY - As a user, I would like to deletee a booking successfully``
 
 Implementation:
 
-
-
 **Delete Booking Page**
 
-A delete button was added to the manage bookings page that will allow users to delete their booking should they no longer require it.
+A delete button was added to the my schedule bookings page that will allow users to delete their booking should they no longer require it.
 
 For staff members, they also have the abaility to delete any booking through the UI as well. This will allow staff to free up schedules capacity should a customer call to cancel their booking.
 
 ![Delete Booking](static/images/my-schedule.png)
-)
+
 
 Favicon
     * A site wide favicon was implemented.
     * This provides an image in the tabs header to allow the user to easily identify the website if they have multiple tabs open.
 
 ![Favicon](static/favicon/favicon.ico)
-)
+
 
 **Error Pages**
 
@@ -349,11 +341,10 @@ A 403 error page has been implemented to provide feedback to the user when they 
 
 This covers:
 
-* Create Booking - Only authorized to staff member
-* Edit Booking - Only authorized to staff member
-* Delete Booking - Only authorized to staff member
-* Update booking - Only authorized to the staff member
-* View Booking - Only authorized to the staff member who created the booking or a customer
+* Create Booking - Only authorized to user 
+* Edit Booking - Only authorized to user 
+* Delete Booking - Only authorized to user 
+* View Booking - Only authorized to the user 
 
 
 ``USER STORY - As a developer, I need to implement a 500 error page to alert users when an internal server error occurs``
@@ -389,13 +380,25 @@ A favicon was added the website to enable users to easily locate the website in 
 - Home page
 
 
-![Home Page](static/images/homepage.png)
+![Home Page](static/images/Gym%20Pro%20-Home.png)
 
 
 - Signup page
 
 
-![Sign up Page](static/images/signup.png)
+![Sign up Page](static/images/Gym%20Pro%20-%20signup.png)
+
+- Login page
+
+
+![Login Page](static/images/Gym%20Pro%20-%20Login.png)
+
+- Schedule page
+
+
+![Schedule Page](static/images/Gym%20Pro%20-%20Schedule.png)
+
+
 
 
 **Differences to Design**
@@ -406,14 +409,16 @@ On the Schedule page, the original wireframe was to display the schedules in a c
 
 The database was designed to allow CRUD functionality to be available to registered users, when signed in. The user model is at the heart of the application as it is connected the the main booking and Schedules, linked by primary/foreign key relationships.
 
-The Schedule Items model holds objects that are linked to the Schedule Models by a many to many relationship. This allows for staff to create Schedule with many menu items on.
+The Schedule Items model holds objects that are linked to the Schedule Models by a many to many relationship. This allows for athourised users to create Schedules.
 
-Bookings are related to the customer (user) by a Foreign Key which allows the users to be able to view and update bookings attached to their accounts.
+Bookings are related to the customer (user) by a Primary Key which allows the users to be able to view and update bookings attached to their accounts.
+
+![ERD Page](static/images/GOgym-ERD.png)
 
 
 ### Security
 
-Views were secured by using the django class based view mixin, UserPassesTextMixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
+Views were secured by using the django class based view mixin. A test function was created to use the mixin and checks were ran to ensure that the user who is trying to access the page is authorized. Any staff restricted functionality, user edit/delete functionality listed in the features was secured using this method.
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
 
@@ -422,7 +427,7 @@ Environment variables were stored in an env.py for local development for securit
 
 ### Colour-Scheme
 
-The main color schemes for the website are black ( #000000 ) background. White font (#FFF) and the White (#FFF) was added to borders, button text and hover affects to add a hint of color to the website.
+The main color schemes for the website are black ( #000000 ) background. White font (#FFF) and the White (#FFF) was added to borders, and  button text and hover affects to add a hint of color to the website.A yellow announcement banner and red buttons.
 
 ### Typography
 
@@ -456,7 +461,7 @@ The hero image was taken from Pexels which is a royalty free image site.
 - Favicon.io
   - favicon files were created at https://favicon.io/favicon-converter/
 - balsamiq
-  - wireframes were created using balsamiq from https://balsamiq.com/wireframes/desktop/#
+  - wireframes were created using figma from https://figma.com/wireframes
 - Canva
   - This was used to create the logo in header 
 - TinyPNG
@@ -467,7 +472,7 @@ The hero image was taken from Pexels which is a royalty free image site.
 * Django Class based views (ListView, UpdateView, DeleteView, CreateView) - Used for the classes to create, read, update and delete
 * Mixins (LoginRequiredMixin, UserPassesTestMixin) - Used to enforce login required on views and test user is authorized to perform actions
 * messages - Used to pass messages to the toasts to display feedback to the user upon actions
-* timedelta, date - Date was used in order to search for objects by date and timedelta for searching date ranges
+
 
 **External Python Modules**
 
@@ -505,7 +510,7 @@ Test cases and results can be found in the [TESTING.md](TESTING.md) file. This w
 
 ### Version Control
 
-The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘Gars-Steakhouse’.
+The site was created using the Visual Studio Code editor and pushed to github to the remote repository ‘Go-Gym’.
 
 The following git commands were used throughout development to push code to the remote repo:
 
@@ -541,7 +546,7 @@ The site was deployed to Heroku. The steps to deploy are as follows:
 
 The app should now be deployed.
 
-The live link can be found here: [Live Site](https://git.heroku.com/gymin.git)
+The live link can be found here: [Live Site](https://gymin.herokuapp.com/)
 
 ### Run Locally
 
@@ -570,8 +575,8 @@ Most commonly, forks are used to either propose changes to someone else's projec
 The [Hero Image](https://www.pexels.com/photo/a-woman-doing-an-ab-workout-6392835/) was taken from pexels.
 
 
-Code isntitute Whiskey drop bootstrap and blog chapters have been used as base template 
-Read me template Gareth given by Mentor Daisy
+Code isntitute  bootstrap chapter have been used as base template 
+Read me template by Gareth given by Mentor Daisy
 Thanks to the tutor support and student care teams.
 
 Thankyou to Kenan for the continous support throughout the course.
