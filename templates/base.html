@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en-us">
+<!-- Header -->
 
 <head>
     <title>Gym Pro | Reach a new milestone every month</title>
@@ -21,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-    
+
     {% endblock %}
     <!-- Javascript files -->
     {% block postload_js %}
@@ -36,13 +37,14 @@
     </script>
     {% endblock %}
 </head>
+<!-- /Header -->
 
 <body>
+    <!-- Navigation -->
     <div class="container-fluid navalert-container">
-        
+
         <nav class="navbar navbar-dark navbar-expand-sm">
-            <!-- <a class="navbar-brand" href="{% url 'get_schedule' %}"><span class="brand, red-0">GymPr<span
-                class="red-o">o</span><span class="thin">|</span></span></span></a> -->
+
             <a href="/" class="navbar-brand">Gym Pro</a>
 
             <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
@@ -54,6 +56,8 @@
                     <li class="active nav-item mr-2"><a class="nav-link" href="/">Home</a></li>
 
                     {% if user.is_authenticated %}
+
+
                     <li class="active nav-item mr-2"><a class="nav-link" href="{% url 'get_schedule' %}">My Schedule</a>
                     </li>
 
@@ -61,7 +65,7 @@
                             href="{% url 'account_login' %}">Sign In </a>
                     </li>
 
-                    
+
                     {% else %}
 
                     <li class="nav-item mr-2 d-block d-sm-none"><a class="nav-link"
@@ -90,7 +94,9 @@
             </div>
         </div>
     </div>
+    <!-- /Navigation-->
 
+    <!-- Messages-->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
@@ -104,6 +110,7 @@
         </div>
     </div>
 
+    <!-- /Messages-->
 
     <div class="container-fluid callout-container">
         <!-- Callout -->
@@ -144,13 +151,11 @@
 
     </script>
     <script>
-    
         setTimeout(function () {
             let messages = document.getElementById('msg');
             let alert = new bootstrap.Alert(messages);
             alert.close();
         }, 2000);
-    
     </script>
 
     {% endblock %}

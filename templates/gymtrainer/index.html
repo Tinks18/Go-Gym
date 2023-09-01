@@ -15,7 +15,6 @@
     {% endblock %}
     {% block css %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!-- Favicon imports -->
@@ -23,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png' %}">
-    
+
     {% endblock %}
     <!-- Javascript files -->
     {% block postload_js %}
@@ -43,7 +42,7 @@
 <body>
     <!-- Navigation -->
     <div class="container-fluid navalert-container">
-        
+
         <nav class="navbar navbar-dark navbar-expand-sm">
 
             <a href="/" class="navbar-brand">Gym Pro</a>
@@ -122,16 +121,16 @@
 
                             <span class="d-inline d-sm-none"><br></span>
                             <strong><mark>Free 4 Day Trial Membership!</mark></strong></p>
-                        
-                                <a href="{% url 'account_signup' %}" class="btn btn--cta btn--red">Free
-                                    Trial Sign Up!</a>
-                        
+
+                        <a href="{% url 'account_signup' %}" class="btn btn--cta btn--red">Free
+                            Trial Sign Up!</a>
+
                         <p class="text-muted"><small>Personal Training
                                 with Dublin's best personal trainers.</small></p>
 
-                        </div>
-
                     </div>
+
+                </div>
             </div>
         </div>
     </div>
@@ -170,9 +169,10 @@
 
 
                                 Losing weight, toning, up, getting stronger, being healthier. Our personal trainers are
-                                here to guide you every step of the way.</p>
+                                here to guide you every step of the way.
+                            </p>
 
-                            
+
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -210,43 +210,6 @@
     </div>
     <!-- /.features -->
 
-    <!-- modal -->
-
-    <div class="modal" tabindex="-1" role="dialog" id="signUpModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Sign Up To Feel Healthy!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone
-                                else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
-                        </div>
-                        <div class="form-group">
-                            <label for="repeatPassword">Repeat Password</label>
-                            <input type="password" class="form-control" id="repeatPassword"
-                                placeholder="Repeat Password">
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- /modal -->
 
 
     <!-- Footer -->
