@@ -574,6 +574,9 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 The [Hero Image](https://www.pexels.com/photo/a-woman-doing-an-ab-workout-6392835/) was taken from pexels.
 
+Profiles app was created from the boutique.ado chapter but it is not a required functionality so commented 
+the code out instead of deleting since I would like to work on it later.
+
 
 Code isntitute  bootstrap chapter have been used as base template 
 Read me template by Gareth given by Mentor Daisy
@@ -581,3 +584,4 @@ Thanks to the tutor support and student care teams.
 
 Thankyou to Kenan for the continous support throughout the course.
 
+Thank you Code Institute.
