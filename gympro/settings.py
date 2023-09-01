@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'gymtrainer',
-    'profiles',
+    
 ]
 
 SITE_ID = 1
