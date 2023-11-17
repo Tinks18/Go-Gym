@@ -193,12 +193,12 @@ The hero section has a sign up button that opens a sign up form.
 
 
 
-![Hero Image](static/images/homepage.png)
+![Hero Image](static/images/gympro-home.png)
 
 For signed up users Under the schedule section are three buttons, 'Add ', 'Edit' and ' Delete'. These buttons will allow the user a quick way to the respective pages if they wish to make a booking or edit the gym active schedules.
 
 
-![Welcome Section](static/images/homepage.png)
+![Welcome Section](static/images/gympro-home.png)
 
 
 
