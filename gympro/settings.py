@@ -29,7 +29,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
-DEBUG = False
+DEBUG = True
 
 if development:
     ALLOWED_HOSTS = ['localhost']
@@ -40,7 +40,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 
 
-ALLOWED_HOSTS = ["gymin.herokuapp.com", "8000-tinks18-gogym-5msx0tces1n.ws-eu104.gitpod.io"]
+ALLOWED_HOSTS = ["gymin.herokuapp.com", "8000-tinks18-gogym-04y7hxn6qhu.ws-eu106.gitpod.io"]
 
 
 # Application definition
