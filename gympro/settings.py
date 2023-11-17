@@ -31,10 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = False
 
-# if development:
-#     ALLOWED_HOSTS = ['localhost']
-# else:
-#     ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
+if development:
+    ALLOWED_HOSTS = ['localhost']
+else:
+    ALLOWED_HOSTS = [os.environ.get('HEROKU_HOSTNAME')]
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'gympro.wsgi.application'
 # }
 
 # DATABASES = {
-#     'default': dj_database_url.prse(os.environ.get('DATABASE_URL'))
+#     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 # }
 
 if development:
